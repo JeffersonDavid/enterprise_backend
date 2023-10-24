@@ -27,7 +27,7 @@ class AuthController extends Controller
         
         list($name,$secret) = explode(':', $decodedCredentials, 2);
 
-        $connectedApp = ConnectedApplication::where('secret', $secret)->first();
+        $connectedApp = ConnectedApplication::where('name', $name)->first();
 
 
         if (!$connectedApp) {
